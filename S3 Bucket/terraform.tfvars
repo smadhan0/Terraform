@@ -1,1 +1,0 @@
-my_bucket_name = "my-s3-bukcet-test-003"
