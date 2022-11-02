@@ -1,12 +1,22 @@
+terraform {
+  required_providers {
+    aws = {
+      source = "hashicorp/aws"
+    }
+    random = {
+      source = "hashicorp/random"
+    }
+  }
+  cloud {
+    organization = "smadhan0"
+
+    workspaces {
+      name = "Github-action-test"
+    }
+  }
+}
 provider "aws" {
 region = "us-east-2"
-source = "hasicorp/aws"
-cloud {
-  organization = "TCS"
-  workspaces { 
-    name = "gh-actions-demo"
-            }
-      }
 }
 resource "aws_instance" "count_terraform_test" {
 # create four similar EC2 instances
