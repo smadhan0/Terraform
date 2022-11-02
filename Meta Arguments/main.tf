@@ -1,7 +1,5 @@
 provider "aws" {
 region = "us-east-2"
-access_key = "AKIAWI4DOLHUOXYNF7FW"
-secret_key = "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"
 }
 resource "aws_instance" "count_terraform_test" {
 # create four similar EC2 instances
