@@ -1,5 +1,12 @@
 provider "aws" {
 region = "us-east-2"
+source = "hasicorp/aws"
+cloud {
+  organization = "TCS"
+  workspaces { 
+    name = "gh-actions-demo"
+            }
+      }
 }
 resource "aws_instance" "count_terraform_test" {
 # create four similar EC2 instances
