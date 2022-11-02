@@ -96,8 +96,8 @@ jobs:
       if: github.event_name == 'pull_request'
       run: terraform plan -no-color -input=false
       with: 
-      access_key: ${{ secrets.aws_access_key }}
-      secret_kay: ${{ secrets.aws_secret_key }}
+      AWS_ACCESS_KEY: ${{ secrets.AWS_ACCESS_KEY }}
+      AWS_SECRET_KEY: ${{ secrets.AWS_SECRET_KEY }}
       continue-on-error: true
 
       # On push to "Terraform", build or change infrastructure according to Terraform configuration files
@@ -106,5 +106,5 @@ jobs:
       if: github.ref == 'refs/heads/"Terraform"' && github.event_name == 'push'
       run: terraform apply -auto-approve -input=false
       with: 
-      access_key: ${{ secrets.aws_access_key }}
-      secret_kay: ${{ secrets.aws_secret_key }}
+      AWS_ACCESS_KEY: ${{ secrets.AWS_ACCESS_KEY }}
+      AWS_SECRET_KEY: ${{ secrets.AWS_SECRET_KEY }}
